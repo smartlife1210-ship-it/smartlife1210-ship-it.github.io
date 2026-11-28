@@ -1,0 +1,4 @@
+<!doctype html><meta charset="utf-8"><body>sending…<script>
+(async()=>{const f=new URLSearchParams(location.search).get('f');const b=await (await fetch(f)).arrayBuffer();
+window.opener.postMessage({lkfile:f,buf:b},'*',[b]);document.body.textContent='sent '+b.byteLength;setTimeout(()=>window.close(),1500);})();
+</script>
